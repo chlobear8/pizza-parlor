@@ -19,7 +19,7 @@ Pizza.prototype.toppingSelection = function() {
   let toppings = {products: [pepperoni]};
   for (let i = 0, i < toppings.length; i += 1) {
     if (toppings[i] === 0) {
-      toppingSelection.push(toppings[i].value);
+      return toppingSelection.push(toppings[i].value);
     }
   }
 };

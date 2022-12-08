@@ -7,5 +7,8 @@ Pizza.prototype.sizeSelection = function() {
     this.size;
   } else if (size === "medium") {
     this.size;
+  } else {
+    (size === "large") 
+    return this.size;
   }
-}
+};

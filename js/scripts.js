@@ -1,14 +1,22 @@
-function Pizza(size) {
+function Pizza(size, topping) {
   this.size = size;
+  this.topping = [];
 }
 
 Pizza.prototype.sizeSelection = function() {
-  if (size === "small") {
-    this.size;
-  } else if (size === "medium") {
-    this.size;
+  if (this.size === "small") {
+    sizeSelection;
+  } else if (this.size === "medium") {
+    sizeSelection;
   } else {
-    (size === "large") 
-    return this.size;
+    (this.size === "large") 
+    return sizeSelection;
+  }
+};
+
+Pizza.prototype.toppingSelection = function() {
+  const toppings = ["pepperoni"]
+  if (this.topping === toppings) {
+    toppingSelection.push("pepperoni");
   }
 };

@@ -15,8 +15,11 @@ Pizza.prototype.sizeSelection = function() {
 };
 
 Pizza.prototype.toppingSelection = function() {
-  const toppings = ["pepperoni"]
-  if (this.topping === toppings) {
-    toppingSelection.push("pepperoni");
+  const pepperoni = {name: "pepperoni"};
+  let toppings = {products: [pepperoni]};
+  for (let i = 0, i < toppings.length; i += 1) {
+    if (toppings[i] === 0) {
+      toppingSelection.push(toppings[i].value);
+    }
   }
 };

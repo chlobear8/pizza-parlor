@@ -1,7 +1,8 @@
-function Pizza(size, toppingSelection, cost) {
+//Business Logic
+
+function Pizza(size, checkedToppings) {
   this.size = size;
-  this.topping = toppingSelection;
-  this.cost = 0;
+  this.topping = checkedToppings;
 }
 
 Pizza.prototype.getAvailableToppings = function() {
@@ -16,18 +17,36 @@ Pizza.prototype.getAvailableToppings = function() {
 
 Pizza.prototype.sizeSelection = function() {
   if (this.size === "small") {
-    sizeSelection;
+    this.cost += 8;
   } else if (this.size === "medium") {
-    sizeSelection;
+    this.cost += 10;
   } else {
     (this.size === "large") 
-    return sizeSelection;
+    return this.cost += 12;
   }
 };
 
-Pizza.prototype.getCost = function() {
+//UI Logic
+
+function handleForm(e) {
+  e.preventDefault();
+  const pizzaSize = document.querySelector("input[name='size']:checked").value;
+  const toppings = getElementByName("topping");
+  const checkedToppings = [];
+  for (let i=0, i<topping.length; i+=1) {
+    if (toppings[i].checked === true) {
+      checkedToppings.push(toppings[i].value);
+    }
+  }
+
+  let pizzaOrder = new Pizza(size, checkedToppings);
   
-}
+
+// Pizza.prototype.getCost = function() {
+//   if (this.size === "small") {
+//     getCost = (this.cost += 8);
+//   }
+// }
 
 
 

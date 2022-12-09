@@ -16,3 +16,7 @@ Test: "It should return a Pizza object with a topping."
 Code: const myPizza = new Pizza(["pepperoni]);
 Expected Output: Pizza {toppings: ["pepperoni"]}
 
+Test: "It should return a Pizza object with two toppings."
+Code: const myPizza = new Pizza(["pepperoni", "pineapple"]);
+Expected Output: Pizza {toppings: ["pepperoni", "pineapple"]}
+

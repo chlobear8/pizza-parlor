@@ -14,20 +14,19 @@ Pizza.prototype.sizeSelection = function() {
   }
 };
 
-//Pizza.prototype.toppingOptions = function() {
-  //let t1 = "pepperoni";
-//}
-
 Pizza.prototype.toppingSelection = function() {
-  let t1 = "pepperoni";
+  const t1 = "pepperoni";
   if (this.topping === t1) {
-    toppingSelection.push(this.topping);
+    this.toppingSelection;
   }
+};
 
-
-//   for (let i = 0, i < toppings.length; i += 1) {
+// Pizza.prototype.toppingSelection = function() {
+//   const pepperoni = "pepperoni";
+//   let toppings = [pepperoni];
+//   for (let i=0, i<toppings.length; i+=1) {
 //     if (toppings[i] === 0) {
-//       return toppingSelection.push(toppings[i].value);
+//       toppingSelection.push(toppings[i].value);
 //     }
 //   }
 // };

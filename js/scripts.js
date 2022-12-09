@@ -1,6 +1,7 @@
-function Pizza(size, toppingSelection) {
+function Pizza(size, toppingSelection, cost) {
   this.size = size;
   this.topping = toppingSelection;
+  this.cost = 0;
 }
 
 Pizza.prototype.getAvailableToppings = function() {
@@ -23,6 +24,10 @@ Pizza.prototype.sizeSelection = function() {
     return sizeSelection;
   }
 };
+
+Pizza.prototype.getCost = function() {
+  
+}
 
 
 

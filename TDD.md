@@ -13,10 +13,14 @@ Code: const myPizza = new Pizza("large");
 Expected Output: Pizza {size: "large"}
 
 Test: "It should return a Pizza object with a topping."
-Code: const myPizza = new Pizza(["pepperoni]);
+Code: const myPizza = new Pizza(["pepperoni"]);
 Expected Output: Pizza {toppings: ["pepperoni"]}
 
 Test: "It should return a Pizza object with two toppings."
 Code: const myPizza = new Pizza(["pepperoni", "pineapple"]);
 Expected Output: Pizza {toppings: ["pepperoni", "pineapple"]}
+
+Test: "It should return a price for small pizza."
+Code: const myPizza = new Pizza("small");
+Expected Output: Pizza {size: "small", cost: "8"}
 

@@ -1,9 +1,9 @@
-function Pizza(size, topping) {
+function Pizza(size, toppingSelection) {
   this.size = size;
-  this.topping = [];
+  this.topping = toppingSelection;
 }
 
-Pizza.getAvailableToppings = function() {
+Pizza.prototype.getAvailableToppings = function() {
   return [
     "pepperoni",
     "pineapple",
@@ -11,7 +11,7 @@ Pizza.getAvailableToppings = function() {
     "olives",
     "onion"
   ];
-}
+};
 
 Pizza.prototype.sizeSelection = function() {
   if (this.size === "small") {
@@ -24,19 +24,12 @@ Pizza.prototype.sizeSelection = function() {
   }
 };
 
-Pizza.prototype.toppingSelection = function() {
-  const t1 = "pepperoni";
-  if (this.topping === t1) {
-    toppingSelection;
-  }
-};
+
 
 // Pizza.prototype.toppingSelection = function() {
-//   const pepperoni = "pepperoni";
-//   let toppings = [pepperoni];
-//   for (let i=0, i<toppings.length; i+=1) {
-//     if (toppings[i] === 0) {
-//       toppingSelection.push(toppings[i].value);
+//   for (let i=0, i<getAvailableToppings.length; i+=1) {
+//     if (toppings[i] === pepperoni) {
+//       toppingSelection.push(toppings[i]);
 //     }
 //   }
 // };

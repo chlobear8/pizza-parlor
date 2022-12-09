@@ -3,6 +3,16 @@ function Pizza(size, topping) {
   this.topping = [];
 }
 
+Pizza.getAvailableToppings = function() {
+  return [
+    "pepperoni",
+    "pineapple",
+    "jalapenos",
+    "olives",
+    "onion"
+  ];
+}
+
 Pizza.prototype.sizeSelection = function() {
   if (this.size === "small") {
     sizeSelection;
@@ -17,7 +27,7 @@ Pizza.prototype.sizeSelection = function() {
 Pizza.prototype.toppingSelection = function() {
   const t1 = "pepperoni";
   if (this.topping === t1) {
-    this.toppingSelection;
+    toppingSelection;
   }
 };
 

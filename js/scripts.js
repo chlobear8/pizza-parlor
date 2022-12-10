@@ -7,11 +7,11 @@ function Pizza(size, toppings) {
 
 Pizza.prototype.getAvailableToppings = function() {
   return [
-    "pepperoni",
-    "pineapple",
-    "jalapenos",
-    "olives",
-    "onion"
+    ["pepperoni", 3],
+    ["pineapple", 2],
+    ["jalapenos", 1],
+    ["olives", 1],
+    ["onion", 1]
   ];
 };
 
@@ -32,31 +32,37 @@ Pizza.prototype.sizeSelection = function() {
   } else {
     cost += 12;
   }
-};
 
-// Pizza.prototype.getCost = function() {
-//   if (this.size === "small") {
-//     getCost = (this.cost += 8);
-//   }
-// }
+  const selectableToppings = getAvailableToppings();
+  for(let i=0; i<this.toppings.length; i++) {
+    for(let j=0; j<selectableToppings.length; j++) {
+      if(this.toppings[i] === selectableToppings[j][0]) {
+        cost += selectableToppings[j][1];
+      }
+    }
+  }
+  return cost;
+};
 
 //UI Logic
 
-function handleForm(e) {
+function handleFormSubmission (e) {
   e.preventDefault();
   const pizzaSize = document.querySelector("input[name='size']:checked").value;
-  const toppings = document.getElementByName("topping");
-  const checkedToppings = [];
-  for (let i=0; i<toppings.length; i+=1) {
-    if (toppings[i].checked === true) {
-      checkedToppings.push(toppings[i].value);
-    }
-  };
+  let toppings = document.querySelectorAll('input[type=checkbox][name=toppings]:checked');
+  let checkedToppings = [];
+  let selected = document.querySelectorAll
+  for (let i = 0; i < selected.length; i++) {
+    checkedToppings.push(selected[i].value);
+    };
 
-  let pizzaOrder = new Pizza(size, checkedToppings);
-  pizzaOrder.getCost();
-  let totalCost = pizzaOrder.
-}
+  const pizzaOrder = new Pizza(size, checkedToppings);
+  document.getElementById("display-price").innerHTML = "Your pizza will cost: $" + p.cost(); 
+};
+
+window.addEventListener("click", function() {
+  document.getElementByClass("btn").addEventListener("submit", handleFormSubmission);
+});
 
 
 

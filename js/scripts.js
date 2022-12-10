@@ -1,8 +1,8 @@
 //Business Logic
 
-function Pizza(size, checkedToppings) {
+function Pizza(size, toppings) {
   this.size = size;
-  this.topping = checkedToppings;
+  this.topping = toppings;
 }
 
 Pizza.prototype.getAvailableToppings = function() {
@@ -15,14 +15,22 @@ Pizza.prototype.getAvailableToppings = function() {
   ];
 };
 
+Pizza.prototype.getAvailableSizes = function() {
+  return [
+    "small",
+    "medium",
+    "large"
+  ];
+}
+
 Pizza.prototype.sizeSelection = function() {
+  let cost = 0;
   if (this.size === "small") {
-    this.cost += 8;
+    cost += 8;
   } else if (this.size === "medium") {
-    this.cost += 10;
+    cost += 10;
   } else {
-    (this.size === "large") 
-    return this.cost += 12;
+    cost += 12;
   }
 };
 
@@ -39,7 +47,7 @@ function handleForm(e) {
   const pizzaSize = document.querySelector("input[name='size']:checked").value;
   const toppings = document.getElementByName("topping");
   const checkedToppings = [];
-  for (let i=0, i<toppings.length; i+=1) {
+  for (let i=0; i<toppings.length; i+=1) {
     if (toppings[i].checked === true) {
       checkedToppings.push(toppings[i].value);
     }

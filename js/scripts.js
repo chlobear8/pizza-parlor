@@ -2,15 +2,15 @@
 
 function Pizza(size, toppings) {
   this.size = size;
-  this.topping = toppings;
+  this.toppings = toppings;
 }
 
 Pizza.prototype.getAvailableToppings = function() {
   return [
     ["pepperoni", 3],
     ["pineapple", 2],
-    ["jalapenos", 1],
-    ["olives", 1],
+    ["jalapeno", 1],
+    ["olive", 1],
     ["onion", 1]
   ];
 };
@@ -21,7 +21,7 @@ Pizza.prototype.getAvailableSizes = function() {
     "medium",
     "large"
   ];
-}
+};
 
 Pizza.prototype.sizeSelection = function() {
   let cost = 0;
@@ -33,7 +33,7 @@ Pizza.prototype.sizeSelection = function() {
     cost += 12;
   }
 
-  const selectableToppings = getAvailableToppings();
+  const selectableToppings = this.getAvailableToppings();
   for(let i=0; i<this.toppings.length; i++) {
     for(let j=0; j<selectableToppings.length; j++) {
       if(this.toppings[i] === selectableToppings[j][0]) {
@@ -48,20 +48,19 @@ Pizza.prototype.sizeSelection = function() {
 
 function handleFormSubmission (e) {
   e.preventDefault();
-  const pizzaSize = document.querySelector("input[name='size']:checked").value;
-  let toppings = document.querySelectorAll('input[type=checkbox][name=toppings]:checked');
+  const size = document.getElementById("size").value;
+  let toppings = document.querySelectorAll('input[type=checkbox][name=topping]:checked');
   let checkedToppings = [];
-  let selected = document.querySelectorAll
-  for (let i = 0; i < selected.length; i++) {
-    checkedToppings.push(selected[i].value);
+  for (let i = 0; i < toppings.length; i++) {
+    checkedToppings.push(toppings[i].value);
     };
-
+    
   const pizzaOrder = new Pizza(size, checkedToppings);
-  document.getElementById("display-price").innerHTML = "Your pizza will cost: $" + p.cost(); 
+  document.getElementById("display-price").innerHTML = "Your pizza will cost: $" + pizzaOrder.sizeSelection(); 
 };
 
 window.addEventListener("click", function() {
-  document.getElementByClass("btn").addEventListener("submit", handleFormSubmission);
+  document.querySelector("form#radio-form").addEventListener("submit", handleFormSubmission);
 });
 
 

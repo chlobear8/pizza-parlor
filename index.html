@@ -11,19 +11,14 @@
   <h1>Welcome to Pizza Pie Palace!</h1>
   <div id="order-form">
   <form id="radio-form">
-    <p>Please select your pizza's size:</p>
-    <label>
-      <input type="checkbox" name="size" value="small">
-      Small (8")
-    </label><br>
-    <label>
-      <input type="checkbox" name="size" value="medium">
-      Medium (12")
-    </label><br>
-    <label>
-      <input type="checkbox" name="size" value="large">
-      Large (14")
-    </label><br>
+    <label for="size">Please select your pizza's size:</label>
+    <br>
+    <select name="size" id="size">
+      <option name="size" value="small">Small (8")</option>
+      <option name="size" value="medium">Medium (12")</option>
+      <option name="size" value="large"> Large (14")</option>
+    </select>
+    </label>
     <p>Please select your pizza's toppings:</p>
     <label>
       <input type="checkbox" name="topping" value="pepperoni">
@@ -45,11 +40,9 @@
       <input type="checkbox" name="topping" value="onion">
       Onion
     </label><br>
-
-    
     <button type="submit" class="btn">Submit Selection</button>
   </form>
-  </div>    
+  </div>   
   <div id="display-price">
   </div>
 </body>

@@ -26,34 +26,29 @@ Pizza.prototype.sizeSelection = function() {
   }
 };
 
-//UI Logic
-
-function handleForm(e) {
-  e.preventDefault();
-  const pizzaSize = document.querySelector("input[name='size']:checked").value;
-  const toppings = getElementByName("topping");
-  const checkedToppings = [];
-  for (let i=0, i<topping.length; i+=1) {
-    if (toppings[i].checked === true) {
-      checkedToppings.push(toppings[i].value);
-    }
-  }
-
-  let pizzaOrder = new Pizza(size, checkedToppings);
-  
-
 // Pizza.prototype.getCost = function() {
 //   if (this.size === "small") {
 //     getCost = (this.cost += 8);
 //   }
 // }
 
+//UI Logic
+
+function handleForm(e) {
+  e.preventDefault();
+  const pizzaSize = document.querySelector("input[name='size']:checked").value;
+  const toppings = document.getElementByName("topping");
+  const checkedToppings = [];
+  for (let i=0, i<toppings.length; i+=1) {
+    if (toppings[i].checked === true) {
+      checkedToppings.push(toppings[i].value);
+    }
+  };
+
+  let pizzaOrder = new Pizza(size, checkedToppings);
+  pizzaOrder.getCost();
+  let totalCost = pizzaOrder.
+}
 
 
-// Pizza.prototype.toppingSelection = function() {
-//   for (let i=0, i<getAvailableToppings.length; i+=1) {
-//     if (toppings[i] === pepperoni) {
-//       toppingSelection.push(toppings[i]);
-//     }
-//   }
-// };
+
